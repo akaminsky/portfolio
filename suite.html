@@ -22,19 +22,16 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
-  <script type="text/javascript">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18606720-5']);
-    _gaq.push(['_trackPageview']);
+    ga('create', 'UA-18606720-5', 'auto');
+    ga('send', 'pageview');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>  
+  </script>
 
 </head>
 
@@ -66,7 +63,7 @@
       <p class="description">Suite 1521 is the intersection between high fashion designers and trunk shows. People become members so that they can gain access to events where the high end fashion designers sell their off the runway clothing.<br /><br />
 
       To kick off this project, our team met with the clients and determined what functionality the site needed to have. From that information, I developed the information architecture for the member, nonmember, and administrator facets of the site. I then developed the structure of the site. Once the clients approved the wireframes, we sent the wireframes to a design agency for direction. When the designs were approved, I then applied those styles to the site using HAML and LESS.</p>
-      <a href="http://www.suite1521.com" class="link" onClick="_gaq.push(['_trackEvent', 'viewLive', 'suite']);" target="_blank">see it live</a>
+      <a href="http://www.suite1521.com" class="link" target="_blank">see it live</a>
     </div>
   </div>
 
@@ -94,6 +91,14 @@
 </div>
 
 <script src="script/script.js"></script>
+<!-- Google Analytics Events Tracking --> 
+<script>
+$( document ).ready(function() {
+  $('.link').on('click', function() {
+    ga('send', 'event', 'viewLive', 'suite');
+  });
+});
+</script>
 
 </body>
 </html>
